@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool isGrounded()
+    public bool isGrounded()
     {
         if (Physics2D.BoxCast(transform.position, castBoxSize, 0, -transform.up, castDistance, groundLayer))
         {
