@@ -139,6 +139,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -397,7 +410,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dog01_0: -4504931111961505413
+      Dog01_1: 4498584078732559506
+      Dog01_10: -4576132973389716393
+      Dog01_2: 8070848253577028883
+      Dog01_3: -4440639323361320739
+      Dog01_4: -4102814259408672409
+      Dog01_5: 8857369278166525282
+      Dog01_6: -4876859948129180672
+      Dog01_7: -2482805787693634954
+      Dog01_8: 9213310860041817892
+      Dog01_9: -5432247910478607953
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
