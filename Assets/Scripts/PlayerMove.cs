@@ -254,7 +254,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Ice"))
         {
             isOnIce = true;
-            playerRB.linearDamping = 1.5f; // Or experiment: 2–5 for more friction control
+            playerRB.linearDamping = 0f; // Or experiment: 2–5 for more friction control
         }
     }
 
