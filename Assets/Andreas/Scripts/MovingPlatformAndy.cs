@@ -1,7 +1,7 @@
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatformAndy : MonoBehaviour
 {
     public Transform platformStart;
     public Transform platformEnd;

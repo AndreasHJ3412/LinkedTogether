@@ -85,12 +85,12 @@ public class PlayerMove : MonoBehaviour
         if (isOnIce)
         {
             // On ice: Use AddForce with low drag
-            playerRB.AddForce(new Vector2(targetSpeed - playerRB.velocity.x, 0), ForceMode2D.Force);
+            playerRB.AddForce(new Vector2(targetSpeed - playerRB.linearVelocity.x, 0), ForceMode2D.Force);
         }
         else if (!isWallJumping)
         {
             // Normal direct velocity control
-            playerRB.velocity = new Vector2(targetSpeed, playerRB.velocity.y);
+            playerRB.linearVelocity = new Vector2(targetSpeed, playerRB.linearVelocity.y);
             Flip();
         }
     }
@@ -114,7 +114,7 @@ public class PlayerMove : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
 
-            if (playerRB.velocity.y == 0)
+            if (playerRB.linearVelocity.y == 0)
             {
                 MoveJuice.Play();
             }
@@ -157,10 +157,10 @@ public class PlayerMove : MonoBehaviour
     //Gravity
     private void Gravity()
     {
-        if (playerRB.velocity.y < 0)
+        if (playerRB.linearVelocity.y < 0)
         {
             playerRB.gravityScale = baseGravity * fallSpeedMultiplier;
-            playerRB.velocity = new Vector2(playerRB.velocity.x, Mathf.Max(playerRB.velocity.y, -maxFallSpeed));
+            playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, Mathf.Max(playerRB.linearVelocity.y, -maxFallSpeed));
         }
         else
         {
@@ -176,7 +176,7 @@ public class PlayerMove : MonoBehaviour
         if (isWallSliding)
         {
             isWallJumping = true;
-            playerRB.velocity = new Vector2(wallJumpDirection * WallJumpPower.x, WallJumpPower.y); //makes player jump away from the wall
+            playerRB.linearVelocity = new Vector2(wallJumpDirection * WallJumpPower.x, WallJumpPower.y); //makes player jump away from the wall
             wallJumpTimer = 0f;
             MoveJuice.Play();
         
@@ -254,7 +254,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Ice"))
         {
             isOnIce = true;
-            playerRB.drag = 1.5f; // Or experiment: 2–5 for more friction control
+            playerRB.linearDamping = 1.5f; // Or experiment: 2–5 for more friction control
         }
     }
 
@@ -263,7 +263,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Ice"))
         {
             isOnIce = false;
-            playerRB.drag = 0; // Or experiment: 2–5 for more friction control
+            playerRB.linearDamping = 0; // Or experiment: 2–5 for more friction control
         }
     }
     
@@ -274,7 +274,7 @@ public class PlayerMove : MonoBehaviour
         if (!isGrounded & WallCheck() & horizontalMove != 0)
         {
             isWallSliding = true;
-            playerRB.velocity = new Vector2(playerRB.velocity.x, Mathf.Max(playerRB.velocity.y, -wallSlideSpeed));
+            playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, Mathf.Max(playerRB.linearVelocity.y, -wallSlideSpeed));
         }
         else
         {
