@@ -8,7 +8,7 @@ public class StickyPlatform : MonoBehaviour
     private float originalSpeed;
     private float originalJumpForce;
 
-    public PlayerMove player;
+    public PlayerMoveAndy player;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

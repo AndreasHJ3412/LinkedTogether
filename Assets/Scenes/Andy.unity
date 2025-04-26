@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceForce: 10
-  player: {fileID: 2052047619}
+  player: {fileID: 2052047621}
 --- !u!1 &300095927
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedModifier: 0.5
   jumpModifier: 0.5
-  player: {fileID: 2052047619}
+  player: {fileID: 2052047621}
 --- !u!50 &326748308
 Rigidbody2D:
   serializedVersion: 5
@@ -310,7 +310,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326748305}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -5804,7 +5804,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 360
+  m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -8438,7 +8438,7 @@ GameObject:
   - component: {fileID: 2052047616}
   - component: {fileID: 2052047615}
   - component: {fileID: 2052047620}
-  - component: {fileID: 2052047619}
+  - component: {fileID: 2052047621}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8592,37 +8592,6 @@ Transform:
   - {fileID: 639952217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2052047619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052047614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27929a2558694dccbfc2b1a21491b19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveJuice: {fileID: 639952219}
-  moveSpeed: 5
-  jumpPower: 10
-  groundCheckPos: {fileID: 1692123580}
-  groundCheckSize: {x: 0.95, y: 0.05}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  isGrounded: 0
-  WallCheckPos: {fileID: 595330076}
-  WallCheckSize: {x: 0.05, y: 1}
-  WallLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  baseGravity: 2
-  maxFallSpeed: 18
-  fallSpeedMultiplier: 2
-  wallSlideSpeed: 2
-  WallJumpPower: {x: 5, y: 10}
 --- !u!114 &2052047620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8650,8 +8619,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2052047619}
-        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+      - m_Target: {fileID: 2052047621}
+        m_TargetAssemblyTypeName: PlayerMoveAndy, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -8706,8 +8675,8 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2052047619}
-        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+      - m_Target: {fileID: 2052047621}
+        m_TargetAssemblyTypeName: PlayerMoveAndy, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -8741,6 +8710,37 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2052047621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052047614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02963230a3e00d44bec2c49d9fe5dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveJuice: {fileID: 639952219}
+  moveSpeed: 5
+  jumpPower: 10
+  groundCheckPos: {fileID: 1692123580}
+  groundCheckSize: {x: 0.95, y: 0.05}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  isGrounded: 0
+  wallCheckPos: {fileID: 595330076}
+  wallCheckSize: {x: 0.5, y: 1}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  baseGravity: 2
+  fallSpeedMultiplier: 2
+  maxFallSpeed: 18
+  wallSlideSpeed: 2
+  wallJumpPower: {x: 5, y: 10}
 --- !u!1 &2085657424
 GameObject:
   m_ObjectHideFlags: 0
@@ -8917,6 +8917,7 @@ GameObject:
   - component: {fileID: 2093979989}
   - component: {fileID: 2093979991}
   - component: {fileID: 2093979990}
+  - component: {fileID: 2093979992}
   m_Layer: 6
   m_Name: 'P_Normal '
   m_TagString: Platform
@@ -9040,6 +9041,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2093979992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093979988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912e3e750ddc47e9a8a0dc22eb893a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2112515545
 GameObject:
   m_ObjectHideFlags: 0

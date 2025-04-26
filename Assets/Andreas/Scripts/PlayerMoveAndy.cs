@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMoveAndy : MonoBehaviour
 {
     private Rigidbody2D playerRB;
     private bool isFacingRight = true;

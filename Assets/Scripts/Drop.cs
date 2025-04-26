@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Drop : MonoBehaviour
 {
     private Collider2D collider;
-    private PlayerMove playerScript;
+    private PlayerMoveAndy playerScript;
 
     private bool playerIsOnPlatform;
     
@@ -14,7 +14,7 @@ public class Drop : MonoBehaviour
     void Start()
     {
         collider = GetComponent<Collider2D>();
-        playerScript = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerMove>();
+        playerScript = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerMoveAndy>();
     }
 
     // Update is called once per frame

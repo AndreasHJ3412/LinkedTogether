@@ -3,7 +3,7 @@ using UnityEngine;
 public class BouncePlatform : MonoBehaviour
 {
     public float bounceForce = 15f;
-    public PlayerMove player;
+    public PlayerMoveAndy player;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
