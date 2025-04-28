@@ -37,14 +37,14 @@ public class RopeConstraint : MonoBehaviour
         {
             float overshoot = distance - maxRopeLength;
 
-            Vector2 relativeVelocity = playerB.velocity - playerA.velocity;
+            Vector2 relativeVelocity = playerB.linearVelocity - playerA.linearVelocity;
             float relVelAlongRope = Vector2.Dot(relativeVelocity, ropeDir);
 
             if (relVelAlongRope > 0f)
             {
                 Vector2 correction = ropeDir * relVelAlongRope;
-                playerA.velocity += correction * 0.5f;
-                playerB.velocity -= correction * 0.5f;
+                playerA.linearVelocity += correction * 0.5f;
+                playerB.linearVelocity -= correction * 0.5f;
             }
 
             Vector2 pullForce = ropeDir * overshoot * ropeStiffness;
