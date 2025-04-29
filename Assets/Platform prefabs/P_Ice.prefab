@@ -231,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3865551087931193789}
   m_Layer: 6
-  m_Name: Ice Parent
+  m_Name: P_Ice
   m_TagString: Ice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
