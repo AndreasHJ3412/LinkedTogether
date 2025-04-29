@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1570827502522156052}
   - component: {fileID: 5426679008132893297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8771905762835480452}
   - component: {fileID: 6222822836186297643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8272457693057661091}
   - component: {fileID: 4448674994188032338}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7516616040739299910}
   - component: {fileID: 1779943043253150528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6195669592418431236}
   - component: {fileID: 6085785528809146625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1901705217231700739}
   - component: {fileID: 5693243527983893638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2084587669732685726}
   - component: {fileID: 6448765897011724867}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9076794351771662113}
   - component: {fileID: 8174284813047830216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5662613850352172706}
   - component: {fileID: 8007433203444899518}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 233486676710350150}
   m_Layer: 6
   m_Name: P_Sticky
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,7 +1087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1951930738751562510}
   - component: {fileID: 6856860138371030930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1171,7 +1171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2198721969099979062}
   - component: {fileID: 6778671331001312606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1342,7 +1342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3741756079657841904}
   - component: {fileID: 7496316112996098314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GreenLight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

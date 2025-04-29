@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 2115105219311310406}
   m_Layer: 6
   m_Name: P_Seesaw
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -47,7 +47,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8733210993233684151}
   - component: {fileID: 6771582681770811757}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2694116829514801732}
   - component: {fileID: 8240583735941836532}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7179844487559076954}
   - component: {fileID: 4781570902066329864}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2567206995660770386}
   - component: {fileID: 1836191324173714384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1293000626798612067}
   - component: {fileID: 849743052319466874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1072588954803264990}
   - component: {fileID: 7341887145824417803}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light 2D (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 8628990683251048774}
   m_Layer: 6
   m_Name: P_Bounce
-  m_TagString: Platform
+  m_TagString: Ground
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
