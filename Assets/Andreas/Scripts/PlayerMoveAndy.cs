@@ -46,6 +46,8 @@ public class PlayerMoveAndy : MonoBehaviour
     private float wallJumpTimer;
     public Vector2 wallJumpPower = new Vector2(5f, 10f);
 
+    public Animator Ani;
+
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
@@ -79,6 +81,10 @@ public class PlayerMoveAndy : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontalMove = context.ReadValue<Vector2>().x;
+
+        Ani.SetBool("Ideal", false);
+        Ani.SetBool("Run", true);
+        Ani.SetBool("Jump", false);
     }
 
     // Input: Jump
@@ -119,6 +125,10 @@ public class PlayerMoveAndy : MonoBehaviour
                 MoveJuice.Play();
             }
         }
+
+        Ani.SetBool("Ideal", false);
+        Ani.SetBool("Run", false);
+        Ani.SetBool("Jump", true);
     }
 
     // Flip the player based on move direction
