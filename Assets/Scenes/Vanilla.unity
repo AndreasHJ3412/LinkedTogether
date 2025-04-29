@@ -7720,7 +7720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &2052047615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8011,9 +8011,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ebdcf91f-22e8-4215-aba3-39c53c172815
     m_ActionName: 'Player/Drop[/Keyboard/s,/Keyboard/downArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 986abbf6-bd46-4ea0-841c-8f11fc899d41
+    m_ActionName: 'Man/Move[/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9fd39608-8fb4-4d8e-ae56-745d08b21ae8
+    m_ActionName: 'Man/Jump[/Keyboard/w]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f3cd44a-075d-4c45-b371-1a36d2ceefe9
+    m_ActionName: 'Man/Drop[/Keyboard/s]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Dog
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &2085657424
@@ -8126,6 +8138,10 @@ PrefabInstance:
     - target: {fileID: 2870441287960990616, guid: fe8bc6a95615a4a79b2d83bac418c1fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725954908659834654, guid: fe8bc6a95615a4a79b2d83bac418c1fd, type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8725954908659834654, guid: fe8bc6a95615a4a79b2d83bac418c1fd, type: 3}
       propertyPath: m_Name
@@ -8299,6 +8315,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5308107634771665357, guid: 23e9a18b3faba44b68262cd709d35753, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308107634771665357, guid: 23e9a18b3faba44b68262cd709d35753, type: 3}
       propertyPath: m_Name
       value: P_Bounce
       objectReference: {fileID: 0}
@@ -8354,6 +8374,10 @@ PrefabInstance:
     - target: {fileID: 6010376592856493780, guid: f4a3409d0229e4d0186f8b045c1ec005, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8135473710573999686, guid: f4a3409d0229e4d0186f8b045c1ec005, type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8135473710573999686, guid: f4a3409d0229e4d0186f8b045c1ec005, type: 3}
       propertyPath: m_Name
@@ -8468,6 +8492,10 @@ PrefabInstance:
     - target: {fileID: 1610698988443943785, guid: cd4aaaab739624c9ab0a918e19ba9b67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573038086837416684, guid: cd4aaaab739624c9ab0a918e19ba9b67, type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4573038086837416684, guid: cd4aaaab739624c9ab0a918e19ba9b67, type: 3}
       propertyPath: m_Name
