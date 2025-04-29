@@ -2,43 +2,42 @@ using UnityEngine;
 
 public class ArmMovement : MonoBehaviour
 {
-    public Transform shoulder;
-    public Transform handTip;
+    public Transform handTip; // Child at the end of the arm
     public Transform dog;
-    public RopeConstraint rope; // Reference to the RopeConstraint script
-
-    private float armLength;
+    public RopeConstraint rope;
 
     void Start()
     {
-        if (shoulder == null || handTip == null || dog == null || rope == null)
+        if (handTip == null || dog == null || rope == null)
         {
-            Debug.LogError("One or more references are not assigned!");
+            Debug.LogError("Missing references on ArmMovement script!");
             enabled = false;
             return;
         }
-        armLength = Vector2.Distance(shoulder.position, handTip.localPosition); // Assuming initial local position is arm length
 
-        // Ensure RopeConstraint is set up
-        if (handTip.GetComponent<Rigidbody2D>() == null || dog.GetComponent<Rigidbody2D>() == null)
+        // Set up rope connection
+        Rigidbody2D handRb = handTip.GetComponent<Rigidbody2D>();
+        Rigidbody2D dogRb = dog.GetComponent<Rigidbody2D>();
+
+        if (handRb == null || dogRb == null)
         {
-            Debug.LogError("HandTip or Dog needs a Rigidbody2D for the rope to work!");
+            Debug.LogError("Both HandTip and Dog need Rigidbody2D components!");
             enabled = false;
             return;
         }
-        rope.Man = handTip.GetComponent<Rigidbody2D>();
-        rope.Dog = dog.GetComponent<Rigidbody2D>();
-        rope.maxRopeLength = armLength; // Set initial rope length
+
+        rope.Man = handRb;
+        rope.Dog = dogRb;
+
+        // Automatically calculate max rope length from initial pose
+        rope.maxRopeLength = Vector2.Distance(handTip.position, dog.position);
     }
 
     void Update()
     {
-        // Point the arm (shoulder) towards the dog
-        Vector2 directionToDog = dog.position - shoulder.position;
-        float angle = Mathf.Atan2(directionToDog.y, directionToDog.x) * Mathf.Rad2Deg;
-        shoulder.rotation = Quaternion.Euler(0, 0, angle);
-
-        // The RopeConstraint will now handle the visual and physical connection
-        // You might not need to explicitly set handTip.position here anymore
+        // Rotate this (the arm GameObject) to point toward the dog
+        Vector2 direction = dog.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }
