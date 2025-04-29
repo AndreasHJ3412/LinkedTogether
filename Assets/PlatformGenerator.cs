@@ -29,8 +29,8 @@ public class PlatformGenerator : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        var spriteRenderer = NormalPlatformPrefabs[0].Prefab.GetComponent<SpriteRenderer>();
-        float platformWidth = spriteRenderer.bounds.size.x;
+        var spriteRenderer = NormalPlatformPrefabs[0].Prefab.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        float platformWidth = spriteRenderer.bounds.size.x * 4;
 
 
         MakePlatformChancher = 100;
@@ -54,7 +54,9 @@ public class PlatformGenerator : MonoBehaviour
 
                         int _LastPlacedPlatformsIndex = Random.Range(0, LastPlacedPlatforms.Count);
 
-                        float candidateX = Mathf.Clamp(LastPlacedPlatforms[_LastPlacedPlatformsIndex].transform.position.x + Random.Range(-10f, 11f), -XAxis, XAxis);
+                        float candidateX = Mathf.Clamp((LastPlacedPlatforms[_LastPlacedPlatformsIndex].transform.position.x + Random.Range(-platformWidth + 0f, platformWidth + 1f)), -XAxis, XAxis);
+
+                        Debug.Log("candidateX: " + candidateX);
 
                         bool overlaps = false;
 
@@ -105,7 +107,9 @@ public class PlatformGenerator : MonoBehaviour
 
                             int _LastPlacedPlatformsIndex = Random.Range(0, LastPlacedPlatforms.Count);
 
-                            float candidateX = Mathf.Clamp(LastPlacedPlatforms[_LastPlacedPlatformsIndex].transform.position.x + Random.Range(-10f, 11f), -XAxis, XAxis);
+                            float candidateX = Mathf.Clamp((LastPlacedPlatforms[_LastPlacedPlatformsIndex].transform.position.x + Random.Range(-platformWidth+0f, platformWidth+1f)), -XAxis, XAxis);
+
+                            Debug.Log("candidateX: " + candidateX);
 
                             bool overlaps = false;
                             foreach (var used in placedPlatforms)
