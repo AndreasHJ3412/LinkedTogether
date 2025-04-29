@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bounce1_P_0: 1750452847517505663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
