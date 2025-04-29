@@ -133,8 +133,9 @@ GameObject:
   - component: {fileID: 252409223}
   - component: {fileID: 252409222}
   - component: {fileID: 252409221}
+  - component: {fileID: 252409225}
   m_Layer: 0
-  m_Name: Player (1)
+  m_Name: Man
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252409218}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c27929a2558694dccbfc2b1a21491b19, type: 3}
   m_Name: 
@@ -244,19 +245,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 252409221}
-        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: a8368085-922e-4d93-8c9d-08d68a711aca
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
@@ -300,9 +289,49 @@ MonoBehaviour:
     m_ActionId: 502a94ed-316d-4b72-8a8f-12fbe1d95077
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c5e9ad7a-91c1-4e62-86e3-7897a1c204d0
+    m_ActionName: 'Player/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ebdcf91f-22e8-4215-aba3-39c53c172815
+    m_ActionName: 'Player/Drop[/Keyboard/s,/Keyboard/downArrow]'
+  - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 252409221}
-        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+      - m_Target: {fileID: 252409225}
+        m_TargetAssemblyTypeName: PlayerMoveAndy, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 986abbf6-bd46-4ea0-841c-8f11fc899d41
+    m_ActionName: 'Man/Move[/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: e912e3e750ddc47e9a8a0dc22eb893a5, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9f3cd44a-075d-4c45-b371-1a36d2ceefe9
+    m_ActionName: 'Man/Drop[/Keyboard/s,/Keyboard/downArrow]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 252409225}
+        m_TargetAssemblyTypeName: PlayerMoveAndy, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -313,27 +342,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: c5e9ad7a-91c1-4e62-86e3-7897a1c204d0
-    m_ActionName: 'Player/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Drop, Assembly-CSharp
-        m_MethodName: DropFunction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ebdcf91f-22e8-4215-aba3-39c53c172815
-    m_ActionName: 'Player/Drop[/Keyboard/s,/Keyboard/downArrow]'
+    m_ActionId: 9fd39608-8fb4-4d8e-ae56-745d08b21ae8
+    m_ActionName: 'Man/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Man
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!61 &252409223
@@ -437,6 +450,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &252409225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252409218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02963230a3e00d44bec2c49d9fe5dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveJuice: {fileID: 1853476583}
+  moveSpeed: 5
+  jumpPower: 10
+  groundCheckPos: {fileID: 879258560}
+  groundCheckSize: {x: 0.5, y: 0.05}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  isGrounded: 0
+  wallCheckPos: {fileID: 704083907}
+  wallCheckSize: {x: 0.5, y: 0.05}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  baseGravity: 2
+  fallSpeedMultiplier: 2
+  maxFallSpeed: 18
+  wallSlideSpeed: 2
+  wallJumpPower: {x: 5, y: 10}
 --- !u!1 &625215365
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,7 +524,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -511,8 +555,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.005290985
-        value: 0.13513947
+        time: 0
+        value: 0.15052795
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -570,13 +614,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625215365}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54ba9d833de17b346997d64d06804f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerA: {fileID: 1171966440}
-  playerB: {fileID: 1977889456}
+  Man: {fileID: 252409219}
+  Dog: {fileID: 1171966440}
   lineRenderer: {fileID: 625215366}
   obstructionLayer:
     serializedVersion: 2
@@ -595,14 +639,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 571bc7d4d154a324e89260f180017073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerA: {fileID: 1171966438}
-  playerB: {fileID: 252409220}
+  Man: {fileID: 252409220}
+  Dog: {fileID: 1171966438}
   maxRopeLength: 3
   ropeStiffness: 200
   ropeDamping: 5
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   groundCheckRadius: 0.2
   maxBendPoints: 30
   maxSlackCurveAmount: 0.55
@@ -1086,7 +1130,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149958588}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec0da2bda8857d649b83731fd434f4fb, type: 3}
   m_Name: 
@@ -1108,9 +1152,10 @@ GameObject:
   - component: {fileID: 1171966438}
   - component: {fileID: 1171966437}
   - component: {fileID: 1171966436}
+  - component: {fileID: 1171966441}
   - component: {fileID: 1171966435}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Dog
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1123,7 +1168,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171966434}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c27929a2558694dccbfc2b1a21491b19, type: 3}
   m_Name: 
@@ -1174,8 +1219,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171966435}
-        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+      - m_Target: {fileID: 1171966441}
+        m_TargetAssemblyTypeName: PlayerMoveAndy, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -1230,8 +1275,8 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171966435}
-        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+      - m_Target: {fileID: 1171966441}
+        m_TargetAssemblyTypeName: PlayerMoveAndy, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
         m_Arguments:
@@ -1246,9 +1291,9 @@ MonoBehaviour:
     m_ActionName: 'Player/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1171966441}
         m_TargetAssemblyTypeName: Drop, Assembly-CSharp
-        m_MethodName: DropFunction
+        m_MethodName: 
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1260,9 +1305,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ebdcf91f-22e8-4215-aba3-39c53c172815
     m_ActionName: 'Player/Drop[/Keyboard/s,/Keyboard/downArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 986abbf6-bd46-4ea0-841c-8f11fc899d41
+    m_ActionName: 'Man/Move[/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f3cd44a-075d-4c45-b371-1a36d2ceefe9
+    m_ActionName: 'Man/Drop[/Keyboard/s,/Keyboard/downArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9fd39608-8fb4-4d8e-ae56-745d08b21ae8
+    m_ActionName: 'Man/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Dog
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!61 &1171966437
@@ -1412,6 +1469,37 @@ Transform:
   - {fileID: 980495544}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171966441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171966434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02963230a3e00d44bec2c49d9fe5dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveJuice: {fileID: 1853476583}
+  moveSpeed: 5
+  jumpPower: 10
+  groundCheckPos: {fileID: 879258560}
+  groundCheckSize: {x: 0.5, y: 0.05}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  isGrounded: 0
+  wallCheckPos: {fileID: 704083907}
+  wallCheckSize: {x: 0.5, y: 0.05}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  baseGravity: 2
+  fallSpeedMultiplier: 2
+  maxFallSpeed: 18
+  wallSlideSpeed: 2
+  wallJumpPower: {x: 5, y: 10}
 --- !u!1 &1329620952
 GameObject:
   m_ObjectHideFlags: 0

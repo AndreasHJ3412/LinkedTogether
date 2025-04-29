@@ -26,8 +26,8 @@ public class ArmMovement : MonoBehaviour
             enabled = false;
             return;
         }
-        rope.playerA = handTip.GetComponent<Rigidbody2D>();
-        rope.playerB = dog.GetComponent<Rigidbody2D>();
+        rope.Man = handTip.GetComponent<Rigidbody2D>();
+        rope.Dog = dog.GetComponent<Rigidbody2D>();
         rope.maxRopeLength = armLength; // Set initial rope length
     }
 

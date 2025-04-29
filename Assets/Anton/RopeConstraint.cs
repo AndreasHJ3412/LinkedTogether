@@ -5,8 +5,8 @@ using UnityEngine;
 public class RopeConstraint : MonoBehaviour
 {
     [Header("Rope Physics")]
-    public Rigidbody2D playerA;
-    public Rigidbody2D playerB;
+    public Rigidbody2D Man;
+    public Rigidbody2D Dog;
     public float maxRopeLength = 5f;
     public float ropeStiffness = 100f;
     public float ropeDamping = 5f;
@@ -27,9 +27,9 @@ public class RopeConstraint : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (playerA == null || playerB == null) return;
+        if (Man == null || Dog == null) return;
 
-        Vector2 ropeVector = playerB.position - playerA.position;
+        Vector2 ropeVector = Dog.position - Man.position;
         float distance = ropeVector.magnitude;
         Vector2 ropeDir = ropeVector.normalized;
 
@@ -37,23 +37,23 @@ public class RopeConstraint : MonoBehaviour
         {
             float overshoot = distance - maxRopeLength;
 
-            Vector2 relativeVelocity = playerB.linearVelocity - playerA.linearVelocity;
+            Vector2 relativeVelocity = Dog.linearVelocity - Man.linearVelocity;
             float relVelAlongRope = Vector2.Dot(relativeVelocity, ropeDir);
 
             if (relVelAlongRope > 0f)
             {
                 Vector2 correction = ropeDir * relVelAlongRope;
-                playerA.linearVelocity += correction * 0.5f;
-                playerB.linearVelocity -= correction * 0.5f;
+                Man.linearVelocity += correction * 0.5f;
+                Dog.linearVelocity -= correction * 0.5f;
             }
 
             Vector2 pullForce = ropeDir * overshoot * ropeStiffness;
-            playerA.AddForce(pullForce * 0.5f, ForceMode2D.Force);
-            playerB.AddForce(-pullForce * 0.5f, ForceMode2D.Force);
+            Man.AddForce(pullForce * 0.5f, ForceMode2D.Force);
+            Dog.AddForce(-pullForce * 0.5f, ForceMode2D.Force);
 
             Vector2 dampingForce = ropeDir * Vector2.Dot(relativeVelocity, ropeDir) * ropeDamping;
-            playerA.AddForce(-dampingForce * 0.5f, ForceMode2D.Force);
-            playerB.AddForce(dampingForce * 0.5f, ForceMode2D.Force);
+            Man.AddForce(-dampingForce * 0.5f, ForceMode2D.Force);
+            Dog.AddForce(dampingForce * 0.5f, ForceMode2D.Force);
         }
 
         UpdateRopeVisual();
@@ -61,12 +61,12 @@ public class RopeConstraint : MonoBehaviour
 
     void UpdateRopeVisual()
     {
-        if (line == null || playerA == null || playerB == null) return;
+        if (line == null || Man == null || Dog == null) return;
 
         // Step 1: Generate raw rope points around obstacles
         List<Vector3> ropePoints = new List<Vector3>();
-        Vector2 start = playerA.position;
-        Vector2 end = playerB.position;
+        Vector2 start = Man.position;
+        Vector2 end = Dog.position;
         ropePoints.Add(start);
 
         Vector2 from = start;
