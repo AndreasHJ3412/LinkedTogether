@@ -12,21 +12,19 @@ public class PlatformDetails
 public class PlatformGenerator : MonoBehaviour
 {
     [Header("Level Size")]
-    public float XAxis = 10f;    
-    public int YLevels = 20;
+    public float XAxis;    
+    public int YLevelsMax;
+    public int YLevelsMin;
 
     [Header("Platform Prefabs")]
     public List<PlatformDetails> NormalPlatformPrefabs;
     public List<PlatformDetails> SinglePlatformPrefabs;
     public List<PlatformDetails> BigPlatformPrefabs;
 
-
-    [Header("Player")]
-    public GameObject Player;
-
     [Header("Kode")]
     private int MakePlatformChancher;
     public List<GameObject> LastPlacedPlatforms;
+    public GameObject WinScreen;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,11 +35,11 @@ public class PlatformGenerator : MonoBehaviour
 
         MakePlatformChancher = 100;
 
-        for (int y = 0; y < YLevels; y++)
+        for (int y = YLevelsMin; y < YLevelsMax; y++)
         {
             int _rr = Random.Range(0, 100);
 
-            if (_rr < MakePlatformChancher)
+            if (_rr <= MakePlatformChancher)
             {
                 if (MakePlatformChancher > 100)
                 {
@@ -80,8 +78,8 @@ public class PlatformGenerator : MonoBehaviour
                         }
                     }
 
-                    LastPlacedPlatforms.Clear();
-                    LastPlacedPlatforms = new List<GameObject>(placedPlatforms);
+                    UpdateLastPlacedPlatforms(placedPlatforms);
+
                 }
                 else
                 {
@@ -149,8 +147,7 @@ public class PlatformGenerator : MonoBehaviour
                         }
                     }
 
-                    LastPlacedPlatforms.Clear();
-                    LastPlacedPlatforms = new List<GameObject>(placedPlatforms);
+                    UpdateLastPlacedPlatforms(placedPlatforms);
                 }
 
                 MakePlatformChancher = 0;
@@ -159,6 +156,11 @@ public class PlatformGenerator : MonoBehaviour
             {
                 MakePlatformChancher += 34;
             }
+        }
+
+        foreach (var item in LastPlacedPlatforms)
+        {
+            item.AddComponent<WinPlatform>();
         }
     }
 
@@ -184,5 +186,17 @@ public class PlatformGenerator : MonoBehaviour
 
         return platforms[0]; 
     }
+
+
+    private void UpdateLastPlacedPlatforms(List<GameObject> _placedPlatforms)
+    {
+        if (_placedPlatforms.Count > 0)
+        {
+            LastPlacedPlatforms.Clear();
+            LastPlacedPlatforms = new List<GameObject>(_placedPlatforms);
+        }
+    }
+
+        
 
 }
