@@ -121,7 +121,7 @@ TextureImporter:
         width: 32
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,13 +138,15 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 04cbe3a410a32447681696b731631109
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 990020b0b2eb84419ab1285120b6af61, type: 3}
+      name: _Sticky_Emi
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
