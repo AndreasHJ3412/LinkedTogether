@@ -9,22 +9,22 @@ public class WinPlatform : MonoBehaviour
     public GameObject GodSpeaking_Canvas;
 
     public List<GameObject> StorySlides;
-    public int StorySlideNumber;
+    private int StorySlideNumber = -1;
 
+    public bool once;
 
-    public void Update()
-    {
-        if (GodSpeaking == true)
-        {
-            StartCoroutine(Speaking());
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (GodSpeaking == false)
         {
-            GodSpeaking = true;
+
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                GodSpeaking = true;
+                StartCoroutine(Speaking());
+            }
+
         }
     }
 
@@ -32,15 +32,19 @@ public class WinPlatform : MonoBehaviour
     {
         while (true)
         {
-            StorySlides[StorySlideNumber].SetActive(false);
+            if (StorySlideNumber >= 0)
+            {
+                StorySlides[StorySlideNumber].SetActive(false);
+            }
+
             StorySlideNumber++;
             if (StorySlideNumber == StorySlides.Count)
             {
-                SceneManager.LoadScene("Final Scene");
+                SceneManager.LoadScene("MainMenu");
             }
             StorySlides[StorySlideNumber].SetActive(true);
 
-            yield return new WaitForSeconds(10); // Wait before repeating
+            yield return new WaitForSeconds(5); // Wait before repeating
         }
     }
 }
