@@ -169,15 +169,20 @@ public class PlatformGenerator : MonoBehaviour
             }
         }
 
+        /*
         foreach (var item in LastPlacedPlatforms)
         {
             item.AddComponent<WinPlatform>();
 
+            
             BoxCollider2D col = item.AddComponent<BoxCollider2D>();
             col.size = new Vector2(platformWidth, platformHight);
             col.offset = new Vector2(0, platformHight / 2);
-            col.isTrigger = true;
-        }
+            col.isTrigger = true;  
+         }
+        */
+
+
     }
 
     public PlatformDetails GetRandomPlatform(List<PlatformDetails> platforms)
