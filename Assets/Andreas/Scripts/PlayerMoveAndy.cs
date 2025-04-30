@@ -68,6 +68,13 @@ public class PlayerMoveAndy : MonoBehaviour
         Gravity();
         WallSlide();
         ProcessWallJump();
+        
+        if (horizontalMove == 0f && isGrounded && !isWallSliding && !isWallJumping && Mathf.Abs(playerRB.linearVelocity.y) < 0.1f)
+        {
+            Ani.SetBool("Ideal", true);
+            Ani.SetBool("Run", false);
+            Ani.SetBool("Jump", false);
+        }
     }
 
     void FixedUpdate()
