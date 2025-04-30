@@ -19,6 +19,10 @@ public class RopeConstraint : MonoBehaviour
     public int smoothingSegments = 20;
 
     private LineRenderer line;
+    
+    [Header("Rope Anchors")]
+    public Transform ManAnchor;
+    public Transform DogAnchor;
 
     void Awake()
     {
@@ -37,14 +41,14 @@ public class RopeConstraint : MonoBehaviour
         {
             float overshoot = distance - maxRopeLength;
 
-            Vector2 relativeVelocity = Dog.linearVelocity - Man.linearVelocity;
+            Vector2 relativeVelocity = Dog.velocity - Man.velocity;
             float relVelAlongRope = Vector2.Dot(relativeVelocity, ropeDir);
 
             if (relVelAlongRope > 0f)
             {
                 Vector2 correction = ropeDir * relVelAlongRope;
-                Man.linearVelocity += correction * 0.5f;
-                Dog.linearVelocity -= correction * 0.5f;
+                Man.velocity += correction * 0.5f;
+                Dog.velocity -= correction * 0.5f;
             }
 
             Vector2 pullForce = ropeDir * overshoot * ropeStiffness;
@@ -59,14 +63,15 @@ public class RopeConstraint : MonoBehaviour
         UpdateRopeVisual();
     }
 
+
     void UpdateRopeVisual()
     {
         if (line == null || Man == null || Dog == null) return;
 
         // Step 1: Generate raw rope points around obstacles
         List<Vector3> ropePoints = new List<Vector3>();
-        Vector2 start = Man.position;
-        Vector2 end = Dog.position;
+        Vector2 start = ManAnchor != null ? (Vector2)ManAnchor.position : Man.position;
+        Vector2 end = DogAnchor != null ? (Vector2)DogAnchor.position : Dog.position;
         ropePoints.Add(start);
 
         Vector2 from = start;
