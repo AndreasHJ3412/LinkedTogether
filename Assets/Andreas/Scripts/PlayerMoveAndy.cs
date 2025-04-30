@@ -146,6 +146,11 @@ public class PlayerMoveAndy : MonoBehaviour
         Ani.SetBool("Jump", true);
     }
 
+    public void Drop(InputAction.CallbackContext context)
+    {
+        
+    }
+
     // Flip the player based on move direction
     private void Flip()
     {

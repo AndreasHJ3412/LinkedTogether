@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 252409220}
   - component: {fileID: 252409223}
   - component: {fileID: 252409222}
-  - component: {fileID: 252409221}
   - component: {fileID: 252409225}
   m_Layer: 0
   m_Name: Man
@@ -188,37 +187,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &252409221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 252409218}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27929a2558694dccbfc2b1a21491b19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveJuice: {fileID: 1389307672}
-  moveSpeed: 5
-  jumpPower: 11
-  groundCheckPos: {fileID: 1687951407}
-  groundCheckSize: {x: 0.95, y: 0.05}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  isGrounded: 0
-  wallCheckPos: {fileID: 1633764265}
-  wallCheckSize: {x: 0.5, y: 0.05}
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  baseGravity: 2
-  fallSpeedMultiplier: 2
-  maxFallSpeed: 18
-  wallSlideSpeed: 2
-  wallJumpPower: {x: 5, y: 10}
 --- !u!114 &252409222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,19 +281,7 @@ MonoBehaviour:
     m_ActionId: 986abbf6-bd46-4ea0-841c-8f11fc899d41
     m_ActionName: 'Man/Move[/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: e912e3e750ddc47e9a8a0dc22eb893a5, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 9f3cd44a-075d-4c45-b371-1a36d2ceefe9
     m_ActionName: 'Man/Drop[/Keyboard/s,/Keyboard/downArrow]'
   - m_PersistentCalls:
@@ -481,6 +437,7 @@ MonoBehaviour:
   maxFallSpeed: 18
   wallSlideSpeed: 2
   wallJumpPower: {x: 5, y: 10}
+  Ani: {fileID: 0}
 --- !u!1 &625215365
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +448,6 @@ GameObject:
   m_Component:
   - component: {fileID: 625215369}
   - component: {fileID: 625215368}
-  - component: {fileID: 625215367}
   - component: {fileID: 625215366}
   m_Layer: 0
   m_Name: Rope
@@ -607,26 +563,6 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &625215367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625215365}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54ba9d833de17b346997d64d06804f1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Man: {fileID: 252409219}
-  Dog: {fileID: 1171966440}
-  lineRenderer: {fileID: 625215366}
-  obstructionLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  checkFrequency: 0.5
-  obstructionCheckRadius: 0.2
 --- !u!114 &625215368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -641,7 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Man: {fileID: 252409220}
   Dog: {fileID: 1171966438}
-  maxRopeLength: 3
+  maxRopeLength: 5
   ropeStiffness: 200
   ropeDamping: 5
   groundLayer:
@@ -1171,7 +1107,6 @@ GameObject:
   - component: {fileID: 1171966437}
   - component: {fileID: 1171966436}
   - component: {fileID: 1171966441}
-  - component: {fileID: 1171966435}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Player
@@ -1179,37 +1114,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1171966435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171966434}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27929a2558694dccbfc2b1a21491b19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveJuice: {fileID: 1853476583}
-  moveSpeed: 5
-  jumpPower: 11
-  groundCheckPos: {fileID: 879258560}
-  groundCheckSize: {x: 0.95, y: 0.05}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  isGrounded: 0
-  wallCheckPos: {fileID: 704083907}
-  wallCheckSize: {x: 0.5, y: 0.05}
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  baseGravity: 2
-  fallSpeedMultiplier: 2
-  maxFallSpeed: 18
-  wallSlideSpeed: 2
-  wallJumpPower: {x: 5, y: 10}
 --- !u!114 &1171966436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,19 +1212,7 @@ MonoBehaviour:
     m_ActionId: c5e9ad7a-91c1-4e62-86e3-7897a1c204d0
     m_ActionName: 'Player/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]'
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1171966441}
-        m_TargetAssemblyTypeName: Drop, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: ebdcf91f-22e8-4215-aba3-39c53c172815
     m_ActionName: 'Player/Drop[/Keyboard/s,/Keyboard/downArrow]'
   - m_PersistentCalls:
@@ -1518,6 +1410,7 @@ MonoBehaviour:
   maxFallSpeed: 18
   wallSlideSpeed: 2
   wallJumpPower: {x: 5, y: 10}
+  Ani: {fileID: 0}
 --- !u!1 &1194811044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,7 +1427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1194811045
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11671,7 +11564,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977889455}
   m_BodyType: 1
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -11688,7 +11581,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

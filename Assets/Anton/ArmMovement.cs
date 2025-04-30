@@ -30,7 +30,7 @@ public class ArmMovement : MonoBehaviour
         rope.Dog = dogRb;
 
         // Automatically calculate max rope length from initial pose
-        rope.maxRopeLength = Vector2.Distance(handTip.position, dog.position);
+        //rope.maxRopeLength = Vector2.Distance(handTip.position, dog.position);
     }
 
     void Update()
