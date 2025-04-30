@@ -67,7 +67,7 @@ public class CameraLogic : MonoBehaviour
     float GetVelocityY(Transform player)
     {
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-        return rb ? rb.velocity.y : 0f;
+        return rb ? rb.linearVelocity.y : 0f;
     }
 
     void ZoomCamera()

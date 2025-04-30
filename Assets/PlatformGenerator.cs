@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class PlatformDetails
@@ -25,7 +26,7 @@ public class PlatformGenerator : MonoBehaviour
     private int MakePlatformChancher;
     private int MakePlatformChancher_Plus = 40;
     public List<GameObject> LastPlacedPlatforms;
-    public GameObject WinScreen;
+    public TextMeshProUGUI WinScreen;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
