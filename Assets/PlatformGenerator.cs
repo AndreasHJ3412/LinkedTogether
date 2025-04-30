@@ -32,6 +32,7 @@ public class PlatformGenerator : MonoBehaviour
     {
         var spriteRenderer = NormalPlatformPrefabs[0].Prefab.transform.GetChild(0).GetComponent<SpriteRenderer>();
         float platformWidth = spriteRenderer.bounds.size.x * 4;
+        float platformHight = spriteRenderer.bounds.size.y;
 
 
         MakePlatformChancher = 100;
@@ -137,6 +138,7 @@ public class PlatformGenerator : MonoBehaviour
                             {
                                 PlatformDetails PD = null;
 
+
                                 if (countThisRow == 1)
                                 {
                                     PD = GetRandomPlatform(SinglePlatformPrefabs);
@@ -145,6 +147,7 @@ public class PlatformGenerator : MonoBehaviour
                                 {
                                     PD = GetRandomPlatform(NormalPlatformPrefabs);
                                 }
+                               
 
                                 Vector2 spawnPos = new Vector2(candidateX, y);
                                 GameObject Platform = Instantiate(PD.Prefab, spawnPos, Quaternion.identity);
@@ -169,6 +172,11 @@ public class PlatformGenerator : MonoBehaviour
         foreach (var item in LastPlacedPlatforms)
         {
             item.AddComponent<WinPlatform>();
+
+            BoxCollider2D col = item.AddComponent<BoxCollider2D>();
+            col.size = new Vector2(platformWidth, platformHight);
+            col.offset = new Vector2(0, platformHight / 2);
+            col.isTrigger = true;
         }
     }
 
