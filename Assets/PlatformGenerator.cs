@@ -23,6 +23,7 @@ public class PlatformGenerator : MonoBehaviour
 
     [Header("Kode")]
     private int MakePlatformChancher;
+    private int MakePlatformChancher_Plus = 40;
     public List<GameObject> LastPlacedPlatforms;
     public GameObject WinScreen;
 
@@ -77,6 +78,8 @@ public class PlatformGenerator : MonoBehaviour
                             GameObject Platform = Instantiate(PD.Prefab, spawnPos, Quaternion.identity);
                             placedPlatforms.Add(Platform);
                             placed = true;
+
+                            MakePlatformChancher -= MakePlatformChancher_Plus * 3;
                         }
                     }
 
@@ -147,18 +150,19 @@ public class PlatformGenerator : MonoBehaviour
                                 GameObject Platform = Instantiate(PD.Prefab, spawnPos, Quaternion.identity);
                                 placedPlatforms.Add(Platform);
                                 placed = true;
+
+
+                                MakePlatformChancher = 0;
                             }
                         }
                     }
 
                     UpdateLastPlacedPlatforms(placedPlatforms);
                 }
-
-                MakePlatformChancher = 0;
             }
             else
             {
-                MakePlatformChancher += 34;
+                MakePlatformChancher += MakePlatformChancher_Plus;
             }
         }
 

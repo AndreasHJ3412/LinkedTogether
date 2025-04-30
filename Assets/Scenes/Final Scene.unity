@@ -6021,6 +6021,9 @@ MonoBehaviour:
   - Name: Sticky
     Prefab: {fileID: 4573038086837416684, guid: cd4aaaab739624c9ab0a918e19ba9b67, type: 3}
     Chanche: 10
+  - Name: Seesaw
+    Prefab: {fileID: 8725954908659834654, guid: fe8bc6a95615a4a79b2d83bac418c1fd, type: 3}
+    Chanche: 10
   SinglePlatformPrefabs:
   - Name: Moveing
     Prefab: {fileID: 8284136591180325744, guid: 5c0bea02808124bdf96199c9d670cb9c, type: 3}
@@ -6028,9 +6031,6 @@ MonoBehaviour:
   BigPlatformPrefabs:
   - Name: Wheel
     Prefab: {fileID: 8135473710573999686, guid: f4a3409d0229e4d0186f8b045c1ec005, type: 3}
-    Chanche: 10
-  - Name: Seesaw
-    Prefab: {fileID: 8725954908659834654, guid: fe8bc6a95615a4a79b2d83bac418c1fd, type: 3}
     Chanche: 10
   LastPlacedPlatforms:
   - {fileID: 1461800621}

@@ -3,7 +3,6 @@ using UnityEngine;
 public class BouncePlatform : MonoBehaviour
 {
     public float bounceForce = 15f; 
-    public PlayerMoveAndy player;   
 
     public Sprite defaultSprite;    
     public Sprite bounceSprite;    
@@ -19,9 +18,9 @@ public class BouncePlatform : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == player.gameObject)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
 
             // Reset vertical velocity for consistent bounce
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);

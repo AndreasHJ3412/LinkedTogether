@@ -8,12 +8,13 @@ public class StickyPlatform : MonoBehaviour
     private float originalSpeed;
     private float originalJumpForce;
 
-    public PlayerMoveAndy player;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlayerMoveAndy player = collision.gameObject.GetComponent<PlayerMoveAndy>();
+
             originalSpeed = player.moveSpeed;
             originalJumpForce = player.jumpPower;
 
@@ -26,6 +27,8 @@ public class StickyPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlayerMoveAndy player = collision.gameObject.GetComponent<PlayerMoveAndy>();
+
             player.moveSpeed = originalSpeed;
             player.jumpPower = originalJumpForce;
         }
