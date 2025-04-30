@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueButtton : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class DialogueButtton : MonoBehaviour
     {
         Scenes[SceneNumber].SetActive(false);
         SceneNumber++;
+        if (SceneNumber == Scenes.Count)             
+        {                                           
+            SceneManager.LoadScene("Final Scene");  
+        }                                           
         Scenes[SceneNumber].SetActive(true);
     }
 }

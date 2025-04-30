@@ -8,7 +8,7 @@ public class StartExit : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Final Scene");
+        SceneManager.LoadScene("FirstAct");
     }
 
     public void QuitGame()
