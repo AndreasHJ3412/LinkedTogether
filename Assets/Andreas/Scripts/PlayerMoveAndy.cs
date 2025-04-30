@@ -276,4 +276,9 @@ public class PlayerMoveAndy : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(wallCheckPos.position, wallCheckSize);
     }
+    
+    public bool IsFacingRight()
+    {
+        return isFacingRight;
+    }
 }

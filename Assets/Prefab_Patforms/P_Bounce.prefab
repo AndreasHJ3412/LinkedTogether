@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a6903e6294024499c15cfe6a7557b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 100
+  bounceForce: 30
   defaultSprite: {fileID: 1750452847517505663, guid: 145f74abd908b476d806357cc0b91243, type: 3}
   bounceSprite: {fileID: 1628282711107166938, guid: 6617389312de44fa2a782ccd1aaf97a2, type: 3}
   resetDelay: 0.4
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a6903e6294024499c15cfe6a7557b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 100
+  bounceForce: 30
   defaultSprite: {fileID: 1750452847517505663, guid: 145f74abd908b476d806357cc0b91243, type: 3}
   bounceSprite: {fileID: 1628282711107166938, guid: 6617389312de44fa2a782ccd1aaf97a2, type: 3}
   resetDelay: 0.4
