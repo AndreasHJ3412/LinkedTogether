@@ -25,7 +25,7 @@ public class DialogueButtton : MonoBehaviour
         {
             doit();
 
-            yield return new WaitForSeconds(10); // Wait before repeating
+            yield return new WaitForSeconds(5); // Wait before repeating
         }
     }
 
