@@ -5,6 +5,11 @@ public class CameraLogic : MonoBehaviour
 {
     public Transform player1;
     public Transform player2;
+    
+    [Header("Camera Bounds")]
+    public BoxCollider2D cameraBoundsCollider;
+    private Vector2 minBounds;
+    private Vector2 maxBounds;
 
     [Header("Zoom Settings")]
     public float minZoom = 5f;
@@ -31,6 +36,13 @@ public class CameraLogic : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         cam.orthographic = true;
+
+        if (cameraBoundsCollider != null)
+        {
+            Bounds bounds = cameraBoundsCollider.bounds;
+            minBounds = bounds.min;
+            maxBounds = bounds.max;
+        }
     }
 
     void LateUpdate()
@@ -61,6 +73,19 @@ public class CameraLogic : MonoBehaviour
         midpoint.z = transform.position.z;
 
         transform.position = Vector3.SmoothDamp(transform.position, midpoint, ref velocity, positionSmoothTime);
+        
+        //Calculate target position using smoothing
+        Vector3 targetPosition = Vector3.SmoothDamp(transform.position, midpoint, ref velocity, positionSmoothTime);
+
+        // Clamp to bounds
+        float camHeight = cam.orthographicSize;
+        float camWidth = cam.aspect * camHeight;
+
+        targetPosition.x = Mathf.Clamp(targetPosition.x, minBounds.x + camWidth, maxBounds.x - camWidth);
+        targetPosition.y = Mathf.Clamp(targetPosition.y, minBounds.y + camHeight, maxBounds.y - camHeight);
+
+        // Apply final clamped position
+        transform.position = targetPosition;
     }
 
 // Helper to get Rigidbody2D Y velocity
