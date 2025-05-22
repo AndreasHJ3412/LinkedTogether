@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,10 +19,6 @@ public class PlayerMoveAndy : MonoBehaviour
     public float jumpPower = 10f;
     private int maxJumps = 2;
     private int jumpsRemaining;
-
-    // Jump cooldown
-    public float jumpCooldown = 0.2f;
-    private float jumpCooldownTimer = 0f;
 
     // Ground Check
     public Transform groundCheckPos;
@@ -49,25 +45,20 @@ public class PlayerMoveAndy : MonoBehaviour
     private float wallJumpTime = 0.5f;
     private float wallJumpTimer;
     public Vector2 wallJumpPower = new Vector2(5f, 10f);
-
+    
     // Animator
     public Animator Ani;
 
     //Audio 
     private AudioManager audioManager;
 
-    // --- NEW: For Pulling Physics ---
-    public Rigidbody2D otherPlayerRB; // Assign the other player's Rigidbody2D in the Inspector
-    public float leashLength = 3f;    // Max distance before tension applies
-    public float pullForce = 50f;     // Force applied when pulling
-                                      // --- END NEW ---
-
+    
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<BoxCollider2D>();
         playerRB.linearDamping = 0f; // Always no drag
-
+        
         audioManager = AudioManager.Instance;
     }
 
@@ -77,13 +68,7 @@ public class PlayerMoveAndy : MonoBehaviour
         Gravity();
         WallSlide();
         ProcessWallJump();
-
-        // Decrease jump cooldown timer
-        if (jumpCooldownTimer > 0f)
-        {
-            jumpCooldownTimer -= Time.deltaTime;
-        }
-
+        
         if (horizontalMove == 0f && isGrounded && !isWallSliding && !isWallJumping && Mathf.Abs(playerRB.linearVelocity.y) < 0.1f)
         {
             Ani.SetBool("Ideal", true);
@@ -104,28 +89,6 @@ public class PlayerMoveAndy : MonoBehaviour
 
             Flip();
         }
-
-        // --- NEW: Physics of Pulling (Conceptual) ---
-        // This section assumes there's another player and aims to apply a force
-        // if the characters are stretched beyond a certain leash length.
-        // For a more robust solution, consider using Unity's Joint2D components
-        // or a dedicated 'LeashManager' script.
-        if (otherPlayerRB != null)
-        {
-            float currentDistance = Vector2.Distance(playerRB.position, otherPlayerRB.position);
-
-            if (currentDistance > leashLength)
-            {
-                // Calculate direction from this player to the other
-                Vector2 pullDirection = (otherPlayerRB.position - playerRB.position).normalized;
-
-                // Apply a force to pull this player towards the other.
-                // The force magnitude increases with how much the leash is stretched.
-                float forceMagnitude = (currentDistance - leashLength) * pullForce;
-                playerRB.AddForce(pullDirection * forceMagnitude, ForceMode2D.Force);
-            }
-        }
-        // --- END NEW ---
     }
 
     // Input: Move
@@ -146,9 +109,6 @@ public class PlayerMoveAndy : MonoBehaviour
     // Input: Jump
     public void Jump(InputAction.CallbackContext context)
     {
-        if (jumpCooldownTimer > 0f)
-            return; // Block jump if still in cooldown
-
         if (isWallSliding)
         {
             if (context.performed)
@@ -157,11 +117,10 @@ public class PlayerMoveAndy : MonoBehaviour
                 playerRB.linearVelocity = new Vector2(wallJumpDirection * wallJumpPower.x, wallJumpPower.y);
                 wallJumpTimer = 0f;
                 MoveJuice.Play();
+                
+                audioManager.PlaySoundEffects(audioManager.jumpSound); //Play jump sound
 
-                audioManager.PlaySoundEffects(audioManager.jumpSound);
-                jumpCooldownTimer = jumpCooldown;
-
-                // Flip forcefully
+                // Force flip
                 if (transform.localScale.x != wallJumpDirection)
                 {
                     isFacingRight = !isFacingRight;
@@ -181,7 +140,6 @@ public class PlayerMoveAndy : MonoBehaviour
                 jumpsRemaining--;
                 MoveJuice.Play();
                 audioManager.PlaySoundEffects(audioManager.jumpSound);
-                jumpCooldownTimer = jumpCooldown;
             }
             else if (context.canceled)
             {
@@ -197,7 +155,7 @@ public class PlayerMoveAndy : MonoBehaviour
 
     public void Drop(InputAction.CallbackContext context)
     {
-
+        
     }
 
     // Flip the player based on move direction
@@ -236,27 +194,11 @@ public class PlayerMoveAndy : MonoBehaviour
     {
         bool wasGrounded = isGrounded; // Save previous grounded state
 
-        // Use OverlapBox to get the Collider2D of the ground object
-        Collider2D groundCollider = Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0f, groundLayer);
-
-        if (groundCollider != null) // Check if something is actually detected as ground
+        if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0f, groundLayer))
         {
+            jumpsRemaining = maxJumps;
             isGrounded = true;
-
-            // --- NEW: Prevent infinite jumping on specific platforms ---
-            // Check if the collided object is tagged as a "WheelPlatform" or "TiltPlatform"
-            if (groundCollider.CompareTag("WheelPlatform") || groundCollider.CompareTag("SeesawPlatform"))
-            {
-                // If on a special platform, allow only one jump (or zero if preferred)
-                jumpsRemaining = 1; // Or 0 if no jumps should be allowed from these platforms
-            }
-            else
-            {
-                // On normal ground, reset to max jumps
-                jumpsRemaining = maxJumps;
-            }
-            // --- END NEW ---
-
+            
             if (!wasGrounded) // If we were in the air last frame, and now we landed
             {
                 audioManager.PlaySoundEffects(audioManager.landSound); // Play landing sound
@@ -334,9 +276,10 @@ public class PlayerMoveAndy : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireCube(wallCheckPos.position, wallCheckSize);
     }
-
+    
     public bool IsFacingRight()
     {
         return isFacingRight;
     }
 }
+*/

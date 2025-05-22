@@ -8,6 +8,8 @@ TagManager:
   - Platform
   - Ice
   - Audio
+  - WheelPlatform
+  - SeesawPlatform
   layers:
   - Default
   - TransparentFX
