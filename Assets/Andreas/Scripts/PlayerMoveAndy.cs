@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMoveAndy : MonoBehaviour
 {
@@ -53,14 +54,32 @@ public class PlayerMoveAndy : MonoBehaviour
     // Animator
     public Animator Ani;
 
-    //Audio 
+    //Audio
     private AudioManager audioManager;
 
-    // --- NEW: For Pulling Physics ---
-    public Rigidbody2D otherPlayerRB; // Assign the other player's Rigidbody2D in the Inspector
-    public float leashLength = 3f;    // Max distance before tension applies
-    public float pullForce = 50f;     // Force applied when pulling
-                                      // --- END NEW ---
+    private PlayerInput playerInput;
+
+
+    public Rigidbody2D otherPlayerRB;
+    public float leashLength = 3f;      // Default leash length
+    public float pullForce = 50f;       // Force applied when pulling
+
+    private static float currentLeashLength; // Static variable to store the current leash length
+
+
+    void Awake()
+    {
+        // Ensure this static variable persists across scene loads if needed
+        if (currentLeashLength == 0f)
+        {
+            currentLeashLength = leashLength; // Initialize with the default
+        }
+        leashLength = currentLeashLength;
+
+        // --- NEW: Get PlayerInput Component ---
+        playerInput = GetComponent<PlayerInput>();
+        playerInput.enabled = true;
+    }
 
     void Start()
     {
@@ -105,11 +124,6 @@ public class PlayerMoveAndy : MonoBehaviour
             Flip();
         }
 
-        // --- NEW: Physics of Pulling (Conceptual) ---
-        // This section assumes there's another player and aims to apply a force
-        // if the characters are stretched beyond a certain leash length.
-        // For a more robust solution, consider using Unity's Joint2D components
-        // or a dedicated 'LeashManager' script.
         if (otherPlayerRB != null)
         {
             float currentDistance = Vector2.Distance(playerRB.position, otherPlayerRB.position);
@@ -125,7 +139,6 @@ public class PlayerMoveAndy : MonoBehaviour
                 playerRB.AddForce(pullDirection * forceMagnitude, ForceMode2D.Force);
             }
         }
-        // --- END NEW ---
     }
 
     // Input: Move
@@ -243,21 +256,18 @@ public class PlayerMoveAndy : MonoBehaviour
         {
             isGrounded = true;
 
-            // --- NEW: Prevent infinite jumping on specific platforms ---
-            // Check if the collided object is tagged as a "WheelPlatform" or "TiltPlatform"
+            // Check if the collided object is tagged as a "WheelPlatform" or "SeesawPlatform"
             if (groundCollider.CompareTag("WheelPlatform") || groundCollider.CompareTag("SeesawPlatform"))
             {
-                // If on a special platform, allow only one jump (or zero if preferred)
-                jumpsRemaining = 1; // Or 0 if no jumps should be allowed from these platforms
+
+                jumpsRemaining = 1;
             }
             else
             {
-                // On normal ground, reset to max jumps
+
                 jumpsRemaining = maxJumps;
             }
-            // --- END NEW ---
-
-            if (!wasGrounded) // If we were in the air last frame, and now we landed
+            if (!wasGrounded)
             {
                 audioManager.PlaySoundEffects(audioManager.landSound); // Play landing sound
             }
@@ -338,5 +348,25 @@ public class PlayerMoveAndy : MonoBehaviour
     public bool IsFacingRight()
     {
         return isFacingRight;
+    }
+
+    public void ChangeDifficulty(int difficulty)
+    {
+        if (difficulty == 0) // Easy
+        {
+            currentLeashLength = 5f;
+        }
+        else if (difficulty == 1) // Medium
+        {
+            currentLeashLength = 3f;
+        }
+        else if (difficulty == 2) // Hard
+        {
+            currentLeashLength = 1.5f;
+        }
+        leashLength = currentLeashLength; // Apply the new leash length
+        
+        // Reload the current scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
