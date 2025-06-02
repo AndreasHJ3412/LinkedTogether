@@ -9,9 +9,11 @@ public class DialogueButtton : MonoBehaviour
 
     public int SceneNumber;
 
+    public float Timer;
+
     private void Start()
     {
-        StartCoroutine(Speaking());
+        doit();
     }
 
     public void OnButtonPressed()
@@ -19,18 +21,22 @@ public class DialogueButtton : MonoBehaviour
         doit();
     }
 
-    private IEnumerator Speaking()
+    private void Update()
     {
-        while (true)
+        if (Timer > 5)
         {
             doit();
-
-            yield return new WaitForSeconds(5); // Wait before repeating
+        }
+        else
+        {
+            Timer += Time.deltaTime;
         }
     }
 
     void doit()
     {
+        Timer = 0;
+
         Scenes[SceneNumber].SetActive(false);
         SceneNumber++;
         if (SceneNumber == Scenes.Count)

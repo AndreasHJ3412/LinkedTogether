@@ -293,6 +293,7 @@ MonoBehaviour:
   MoveJuice: {fileID: 380149160}
   moveSpeed: 5
   jumpPower: 10
+  jumpCooldown: 0.2
   groundCheckPos: {fileID: 1529021500}
   groundCheckSize: {x: 0.5, y: 0.7}
   groundLayer:
@@ -310,6 +311,9 @@ MonoBehaviour:
   wallSlideSpeed: 2
   wallJumpPower: {x: 5, y: 10}
   Ani: {fileID: 129125126}
+  otherPlayerRB: {fileID: 0}
+  leashLength: 3
+  pullForce: 50
 --- !u!114 &129125121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5940,6 +5944,7 @@ MonoBehaviour:
   MoveJuice: {fileID: 380149160}
   moveSpeed: 5
   jumpPower: 10
+  jumpCooldown: 0.2
   groundCheckPos: {fileID: 1529021500}
   groundCheckSize: {x: 0.5, y: 0.1}
   groundLayer:
@@ -5957,6 +5962,9 @@ MonoBehaviour:
   wallSlideSpeed: 2
   wallJumpPower: {x: 5, y: 10}
   Ani: {fileID: 527558766}
+  otherPlayerRB: {fileID: 0}
+  leashLength: 3
+  pullForce: 50
 --- !u!114 &527558769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6241,7 +6249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XAxis: 10
   YLevelsMax: 350
-  YLevelsMin: -9
+  YLevelsMin: -8
   NormalPlatformPrefabs:
   - Name: Normal
     Prefab: {fileID: 7587814991564493870, guid: e2b6c72852394402caa98c2af5ddb165, type: 3}
