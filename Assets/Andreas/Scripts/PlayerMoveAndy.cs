@@ -365,6 +365,8 @@ public class PlayerMoveAndy : MonoBehaviour
             currentLeashLength = 1.5f;
         }
         leashLength = currentLeashLength; // Apply the new leash length
+
+        FindAnyObjectByType<PauseScreen>().Resume();
         
         // Reload the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
