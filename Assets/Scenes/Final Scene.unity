@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: d0f7748be5372421aab1b098f0e59e2e, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: b71a761134c637140906dcb4a2e139ab, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -341,56 +341,12 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: a8368085-922e-4d93-8c9d-08d68a711aca
-    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+    m_ActionId: 3a431228-2f65-4405-9d95-24bbc177c063
+    m_ActionName: 'Dog/Move[/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 81aaa85b-adb4-44d4-9d34-87fdac898b09
-    m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 870fcb72-a06b-4b1f-af09-719830b321ff
-    m_ActionName: 'UI/Submit[/Keyboard/enter]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 351ec504-87eb-4d0a-b796-077291a73419
-    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f125c78e-8fab-4228-b9b3-d9b9db6dabdf
-    m_ActionName: 'UI/Point[/Mouse/position,/Pen/position]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4f46de39-5017-46db-b562-110ca66a6747
-    m_ActionName: 'UI/Click[/Mouse/leftButton,/Pen/tip]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2d2c6aa6-5607-453c-b4a2-6039591dc61c
-    m_ActionName: 'UI/ScrollWheel[/Mouse/scroll]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8fd287d9-faab-4d6b-a25b-93d0640d68a9
-    m_ActionName: 'UI/MiddleClick[/Mouse/middleButton]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b780d3fb-28a7-4ea2-928f-83b8a1d969ca
-    m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1548e706-5b35-41df-9f42-7acfc466e7c7
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 502a94ed-316d-4b72-8a8f-12fbe1d95077
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c5e9ad7a-91c1-4e62-86e3-7897a1c204d0
-    m_ActionName: 'Player/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ebdcf91f-22e8-4215-aba3-39c53c172815
-    m_ActionName: 'Player/Drop[/Keyboard/s,/Keyboard/downArrow]'
+    m_ActionId: 8aa7c2c1-2a68-4001-956a-77a4daebfa95
+    m_ActionName: 'Dog/Jump[/Keyboard/upArrow]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 129125119}
@@ -405,24 +361,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 986abbf6-bd46-4ea0-841c-8f11fc899d41
-    m_ActionName: 'Man/Move[/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: e912e3e750ddc47e9a8a0dc22eb893a5, type: 3}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9f3cd44a-075d-4c45-b371-1a36d2ceefe9
-    m_ActionName: 'Man/Drop[/Keyboard/s,/Keyboard/downArrow]'
+    m_ActionId: 455cd187-9b13-4102-9eaf-0fe58a96c527
+    m_ActionName: 'Man/Move[/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 129125119}
@@ -437,12 +377,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 9fd39608-8fb4-4d8e-ae56-745d08b21ae8
-    m_ActionName: 'Man/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 47fc8059-a21b-4e79-b138-50b6ed79fe7a
-    m_ActionName: Dog/Idle
+    m_ActionId: 687bea38-afd4-4691-b922-a1e700375c59
+    m_ActionName: 'Man/Jump[/Keyboard/w]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Man
@@ -5977,7 +5913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: d0f7748be5372421aab1b098f0e59e2e, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: b71a761134c637140906dcb4a2e139ab, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -6004,48 +5940,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: a8368085-922e-4d93-8c9d-08d68a711aca
-    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 81aaa85b-adb4-44d4-9d34-87fdac898b09
-    m_ActionName: 'UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 870fcb72-a06b-4b1f-af09-719830b321ff
-    m_ActionName: 'UI/Submit[/Keyboard/enter]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 351ec504-87eb-4d0a-b796-077291a73419
-    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f125c78e-8fab-4228-b9b3-d9b9db6dabdf
-    m_ActionName: 'UI/Point[/Mouse/position,/Pen/position]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4f46de39-5017-46db-b562-110ca66a6747
-    m_ActionName: 'UI/Click[/Mouse/leftButton,/Pen/tip]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2d2c6aa6-5607-453c-b4a2-6039591dc61c
-    m_ActionName: 'UI/ScrollWheel[/Mouse/scroll]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8fd287d9-faab-4d6b-a25b-93d0640d68a9
-    m_ActionName: 'UI/MiddleClick[/Mouse/middleButton]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b780d3fb-28a7-4ea2-928f-83b8a1d969ca
-    m_ActionName: 'UI/RightClick[/Mouse/rightButton]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1548e706-5b35-41df-9f42-7acfc466e7c7
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 502a94ed-316d-4b72-8a8f-12fbe1d95077
-    m_ActionName: UI/TrackedDeviceOrientation
+    m_ActionId: 3a431228-2f65-4405-9d95-24bbc177c063
+    m_ActionName: 'Dog/Move[/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 527558768}
@@ -6060,40 +5956,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: c5e9ad7a-91c1-4e62-86e3-7897a1c204d0
-    m_ActionName: 'Player/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 527558768}
-        m_TargetAssemblyTypeName: Drop, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ebdcf91f-22e8-4215-aba3-39c53c172815
-    m_ActionName: 'Player/Drop[/Keyboard/s,/Keyboard/downArrow]'
+    m_ActionId: 8aa7c2c1-2a68-4001-956a-77a4daebfa95
+    m_ActionName: 'Dog/Jump[/Keyboard/upArrow]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 986abbf6-bd46-4ea0-841c-8f11fc899d41
-    m_ActionName: 'Man/Move[/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+    m_ActionId: 455cd187-9b13-4102-9eaf-0fe58a96c527
+    m_ActionName: 'Man/Move[/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 9f3cd44a-075d-4c45-b371-1a36d2ceefe9
-    m_ActionName: 'Man/Drop[/Keyboard/s,/Keyboard/downArrow]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9fd39608-8fb4-4d8e-ae56-745d08b21ae8
-    m_ActionName: 'Man/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 47fc8059-a21b-4e79-b138-50b6ed79fe7a
-    m_ActionName: Dog/Idle
+    m_ActionId: 687bea38-afd4-4691-b922-a1e700375c59
+    m_ActionName: 'Man/Jump[/Keyboard/w]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Dog
@@ -13513,7 +13385,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 1, g: 1, b: 1, a: 1}
       key1: {r: 0, g: 0, b: 0, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -13970,7 +13842,7 @@ MonoBehaviour:
   handTip: {fileID: 1384122224}
   dog: {fileID: 527558764}
   rope: {fileID: 1483051263}
-  player: {fileID: 0}
+  player: {fileID: 129125119}
 --- !u!1 &1786662309
 GameObject:
   m_ObjectHideFlags: 0
